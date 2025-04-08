@@ -7,7 +7,7 @@ import Servicios from "../../complements/Buttons/Servicios/button";
 function Home() {
     return (
         <>
-            <NavBar />
+       
             <div className="relative flex-grow container mx-auto px-4 py-10 flex flex-col min-h-screen">
                 <svg
                     className="absolute inset-0 w-full h-full z-0"
@@ -53,9 +53,7 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div>
-                <Footer />
-            </div>
+            
         </>
     );
 }

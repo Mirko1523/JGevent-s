@@ -1,13 +1,11 @@
+// NavBar.jsx
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logoJG.png";
 import Presupuesto from "../Buttons/Presupuesto/button";
 
 function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const location = useLocation();
-    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,13 +16,7 @@ function NavBar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const isActive = (path) => location.pathname === path;
     const toggleMenu = () => setMenuOpen(!menuOpen);
-
-    const goToHome = () => navigate("/");
-    const goToNosotros = () => navigate("/nosotros");
-    const goToEventos = () => navigate("/eventos");
-    const goToContacto = () => navigate("/contacto");
 
     return (
         <header
@@ -40,16 +32,14 @@ function NavBar() {
                         width={40}
                         height={40}
                         className="cursor-pointer"
-                        onClick={goToHome}
+                        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                     />
                 </div>
 
-               
                 <div className="md:hidden block">
                     <Presupuesto />
                 </div>
 
-               
                 <button
                     onClick={toggleMenu}
                     className="md:hidden block"
@@ -66,47 +56,37 @@ function NavBar() {
                     </svg>
                 </button>
 
-              
                 <div className="hidden md:flex items-center space-x-8">
-                    <span
-                        className={`text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg ${
-                            isActive("/") ? "bg-yellow-600 text-white" : ""
-                        }`}
-                        onClick={goToHome}
+                    <a
+                        href="#home"
+                        className="text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg"
                     >
                         Home
-                    </span>
-                    <span
-                        className={`text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg ${
-                            isActive("/nosotros") ? "bg-yellow-600 text-white" : ""
-                        }`}
-                        onClick={goToNosotros}
+                    </a>
+                    <a
+                        href="#nosotros"
+                        className="text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg"
                     >
                         Nosotros
-                    </span>
-                    <span
-                        className={`text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg ${
-                            isActive("/eventos") ? "bg-yellow-400 text-white" : ""
-                        }`}
-                        onClick={goToEventos}
+                    </a>
+                    <a
+                        href="#eventos"
+                        className="text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg"
                     >
                         Eventos
-                    </span>
-                    <span
-                        className={`text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg ${
-                            isActive("/contacto") ? "bg-yellow-400 text-white" : ""
-                        }`}
-                        onClick={goToContacto}
+                    </a>
+                    <a
+                        href="#contacto"
+                        className="text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg"
                     >
                         Contacto
-                    </span>
+                    </a>
                     <div className="flex-1 flex justify-end">
                         <Presupuesto />
                     </div>
                 </div>
             </div>
 
-    
             <div
                 className={`${
                     menuOpen ? "w-full max-h-screen py-4" : "w-full max-h-0"
@@ -115,44 +95,36 @@ function NavBar() {
                 <nav>
                     <ul className="flex flex-col items-center text-base text-gray-700">
                         <li className="py-3 border-b border-gray-300 w-full text-center last:border-b-0">
-                            <span
-                                className={`text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg ${
-                                    isActive("/") ? "bg-yellow-600 text-white" : ""
-                                }`}
-                                onClick={goToHome}
+                            <a
+                                href="#home"
+                                className="text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg"
                             >
                                 Home
-                            </span>
+                            </a>
                         </li>
                         <li className="py-4 border-b border-gray-300 w-full text-center last:border-b-0">
-                            <span
-                                className={`text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg ${
-                                    isActive("/nosotros") ? "bg-yellow-600 text-white" : ""
-                                }`}
-                                onClick={goToNosotros}
+                            <a
+                                href="#nosotros"
+                                className="text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg"
                             >
                                 Nosotros
-                            </span>
+                            </a>
                         </li>
                         <li className="py-4 border-b border-gray-300 w-full text-center last:border-b-0">
-                            <span
-                                className={`text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg ${
-                                    isActive("/eventos") ? "bg-yellow-600 text-white" : ""
-                                }`}
-                                onClick={goToEventos}
+                            <a
+                                href="#eventos"
+                                className="text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg"
                             >
                                 Eventos
-                            </span>
+                            </a>
                         </li>
                         <li className="py-4 border-b border-gray-300 w-full text-center last:border-b-0">
-                            <span
-                                className={`text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg ${
-                                    isActive("/contacto") ? "bg-yellow-600 text-white" : ""
-                                }`}
-                                onClick={goToContacto}
+                            <a
+                                href="#contacto"
+                                className="text-black font-bold cursor-pointer hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg"
                             >
                                 Contacto
-                            </span>
+                            </a>
                         </li>
                     </ul>
                 </nav>
