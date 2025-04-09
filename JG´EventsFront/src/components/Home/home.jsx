@@ -1,14 +1,14 @@
 import React from "react";
 import FondoImagenHome from "../../assets/FondoHm.png";
-import Servicios from "../../complements/Buttons/Servicios/button";
 import fifteen from "../../assets/fifteen.png";
 import goldenrings from "../../assets/goldenrings.png";
 import corporativos from "../../assets/corporativos.png";
 import aniversarios from "../../assets/aniversary.png";
 import recepciones from "../../assets/recepcion.png";
 import otros from "../../assets/others.png";
+import Presupuesto from "../../complements/Buttons/Presupuesto/button";
 
-// Agregamos la propiedad "image" a cada objeto de cardData.
+
 const cardData = [
   {
     title: "Fiestas de 15",
@@ -79,7 +79,7 @@ function Home() {
               <strong className="text-black font-semibold">éxito rotundo.</strong>
             </p>
             <div className="flex justify-left mt-10 space-x-8">
-              <Servicios />
+              <Presupuesto/>
             </div>
           </div>
           <div className="relative flex-2 flex items-center justify-center">

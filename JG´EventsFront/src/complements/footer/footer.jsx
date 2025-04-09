@@ -28,7 +28,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/julietagomezvera.eventos/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 text-white rounded-lg hover:bg-gray-700"
@@ -38,7 +38,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                    href="https://l.instagram.com/?u=https%3A%2F%2Fjulietagomezveraeventos.taplink.ws%2F%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAadWgmOnHl5gO_cimflXMENCNaiMasVRp9Jj6k5PCpIHX0R08xFwjFVmj2DrxQ_aem_4p4exVWwNsIIctmqYvAfTw&e=AT2tgLAL5zsm7Dq2Cfe65XIrnd3HVKfZKkXyeA5ZhEqlvNW8NZD52NiRDPc0fhnXvOrR6EST22D10HcHzH5RmIoReTV6-BIZLvHWyQ"
+                    href="https://l.instagram.com/?u=https%3A%2F%2Fjulietagomezveraeventos.taplink.ws%2F%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaezpj8Z1Z2vULKvq3IYxjJVTI4qaP4bnVifv7FHjAB4u_Qsk43Mj47mdn6uZw_aem_Hkb02BlQDsWEkCYK9tt1Ng&e=AT1xVTOzRIsu94-UT70fgJXpH9TltnP24IpRRsS-e_j4vQgMILOXvwjZeOBldgmnGpe4oGmI4uFHGvqIGod-2ZqZ38vfx09vh5MUQA" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 text-white rounded-lg hover:bg-gray-700"
