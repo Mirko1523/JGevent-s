@@ -38,7 +38,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                    href="https://wa.me/1234567890" // Reemplaza con tu número real
+                    href="https://l.instagram.com/?u=https%3A%2F%2Fjulietagomezveraeventos.taplink.ws%2F%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAadWgmOnHl5gO_cimflXMENCNaiMasVRp9Jj6k5PCpIHX0R08xFwjFVmj2DrxQ_aem_4p4exVWwNsIIctmqYvAfTw&e=AT2tgLAL5zsm7Dq2Cfe65XIrnd3HVKfZKkXyeA5ZhEqlvNW8NZD52NiRDPc0fhnXvOrR6EST22D10HcHzH5RmIoReTV6-BIZLvHWyQ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 text-white rounded-lg hover:bg-gray-700"

@@ -2,7 +2,9 @@ import React from "react";
 
 import Footer from "../../complements/footer/footer";
 
-function Contactanos() {
+function 
+
+Contactanos() {
     return (
         <>
          
