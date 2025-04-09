@@ -9,11 +9,13 @@ import otros from "../../assets/others.png";
 import Presupuesto from "../../complements/Buttons/Presupuesto/button";
 
 
+
 const cardData = [
   {
     title: "Fiestas de 15",
     description: "Cumple tu sueño recibiendo un amor único.",
     image: fifteen,
+ 
   },
   {
     title: "Casamientos",

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Importamos Link
 import logo from "../../assets/logoJG.png";
 import Presupuesto from "../Buttons/Presupuesto/button";
 
@@ -18,14 +19,14 @@ function NavBar() {
     const toggleMenu = () => setMenuOpen(!menuOpen);
     const toggleServices = () => setServicesOpen(!servicesOpen);
 
-    // Opciones de Servicios
+    // Opciones de Servicios con rutas que redirigen a páginas distintas
     const serviceItems = [
-        ["FIESTAS DE 15", "Cumple tu sueño recibiendo un amor único"],
-        ["CASAMIENTOS", "Todos tus sueños cumplidos en una fiesta"],
-        ["EVENTOS CORPORATIVOS", "Conexiones que hacen de un encuentro un éxito"],
-        ["ANIVERSARIOS", "Festeja el amor en un encuentro inolvidable"],
-        ["RECEPCIONES", "Despedí esta etapa de la mejor manera"],
-        ["OTROS", "Adaptamos este encuentro según tus gustos"]
+        { title: "FIESTAS DE 15", desc: "Cumple tu sueño recibiendo un amor único", href: "/seccion15" },
+        { title: "CASAMIENTOS", desc: "Todos tus sueños cumplidos en una fiesta", href: "/seccionCasamiento" },
+        { title: "EVENTOS CORPORATIVOS", desc: "Conexiones que hacen de un encuentro un éxito", href: "/seccionCorp" },
+        { title: "ANIVERSARIOS", desc: "Festeja el amor en un encuentro inolvidable", href: "/seccionAniv" },
+        { title: "RECEPCIONES", desc: "Despedí esta etapa de la mejor manera", href: "/seccionRecep" },
+        { title: "OTROS", desc: "Adaptamos este encuentro según tus gustos", href: "/seccionOtros" },
     ];
 
     return (
@@ -72,11 +73,11 @@ function NavBar() {
                         </button>
                         {servicesOpen && (
                             <div className="absolute bg-white shadow-lg rounded-lg mt-2 z-50 w-64 text-left">
-                                {serviceItems.map(([title, desc], i) => (
-                                    <div key={i} className="px-4 py-2 hover:bg-yellow-100 cursor-pointer">
+                                {serviceItems.map(({ title, desc, href }, i) => (
+                                    <Link key={i} to={href} className="block px-4 py-2 hover:bg-yellow-100 cursor-pointer">
                                         <p className="font-semibold">{title}</p>
                                         <p className="text-sm text-gray-600">{desc}</p>
-                                    </div>
+                                    </Link>
                                 ))}
                             </div>
                         )}
@@ -112,11 +113,11 @@ function NavBar() {
                             </button>
                             {servicesOpen && (
                                 <div className="mt-2 space-y-2 text-left px-6">
-                                    {serviceItems.map(([title, desc], i) => (
-                                        <div key={i}>
+                                    {serviceItems.map(({ title, desc, href }, i) => (
+                                        <Link key={i} to={href} className="block py-2">
                                             <p className="font-semibold">{title}</p>
                                             <p className="text-sm text-gray-600">{desc}</p>
-                                        </div>
+                                        </Link>
                                     ))}
                                 </div>
                             )}
