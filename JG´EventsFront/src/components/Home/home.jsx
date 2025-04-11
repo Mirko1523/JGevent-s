@@ -1,5 +1,4 @@
 import React from "react";
-import FondoImagenHome from "../../assets/FondoHm.png";
 import fifteen from "../../assets/fifteen.png";
 import goldenrings from "../../assets/goldenrings.png";
 import corporativos from "../../assets/corporativos.png";
@@ -7,15 +6,13 @@ import aniversarios from "../../assets/aniversary.png";
 import recepciones from "../../assets/recepcion.png";
 import otros from "../../assets/others.png";
 import Presupuesto from "../../complements/Buttons/Presupuesto/button";
-
-
+import Carrousel from "../../complements/carrousel/carrousel";
 
 const cardData = [
   {
     title: "Fiestas de 15",
     description: "Cumple tu sueño recibiendo un amor único.",
     image: fifteen,
- 
   },
   {
     title: "Casamientos",
@@ -66,32 +63,39 @@ function Home() {
             "
           />
         </svg>
+
         <div className="relative z-5 flex flex-col md:flex-row items-center md:items-start gap-8">
-          <div className="flex-1 flex flex-col items-start justify-center ml-5">
-            <h3 className="text-sm font-semibold text-gray-500 text-left">
-              Nuestro compromiso:
-            </h3>
-            <h1 className="text-4xl font-semibold text-left ml-3 mt-3">
-              Que seamos tu mejor opción para eventos inolvidables.
-            </h1>
-            <p className="text-lg font-semibold text-gray-500 text-left ml-3 mt-3">
-              Contamos con la oferta más completa de servicios para eventos,
-              desde el mejor catering hasta decoración y entretenimiento. Nos
-              aseguramos de que cada detalle esté cuidado para que tu evento sea un{" "}
-              <strong className="text-black font-semibold">éxito rotundo.</strong>
-            </p>
-            <div className="flex justify-left mt-10 space-x-8">
-              <Presupuesto/>
-            </div>
-          </div>
-          <div className="relative flex-2 flex items-center justify-center">
-            <img
-              src={FondoImagenHome}
-              alt="Evento especial"
-              className="w-2/3 h-auto object-contain absolute -top-10 right-0 -translate-y-18 mr-20"
-            />
-          </div>
-        </div>
+  <div className="flex-1 flex flex-col items-start justify-center ml-5">
+    <h3 className="text-sm font-semibold text-gray-500 text-left">
+      Nuestro compromiso:
+    </h3>
+    <h1 className="text-4xl font-semibold text-left ml-3 mt-3">
+      Que seamos tu mejor opción para eventos inolvidables.
+    </h1>
+    <p className="text-lg font-semibold text-gray-500 text-left ml-3 mt-3">
+      Contamos con la oferta más completa de servicios para eventos,
+      desde el mejor catering hasta decoración y entretenimiento. Nos
+      aseguramos de que cada detalle esté cuidado para que tu evento sea un{" "}
+      <strong className="text-black font-semibold">éxito rotundo.</strong>
+    </p>
+    <div className="flex justify-left mt-10 space-x-8">
+      <Presupuesto />
+    </div>
+
+    {/* Mostrar el carrousel debajo del texto en mobile */}
+    <div className="block md:hidden mt-8 w-full">
+      <Carrousel />
+    </div>
+  </div>
+
+  {/* Mostrar el carrousel al costado en desktop */}
+  <div className="hidden md:flex flex-2 items-center justify-center">
+    <Carrousel />
+  </div>
+</div>
+
+
+        {/* Título + tarjetas */}
         <div className="relative z-10 mt-20 mb-4 px-5">
           <h1 className="text-3xl md:text-4xl font-semibold text-left">
             Siempre puede ser un día especial
@@ -103,7 +107,6 @@ function Home() {
               key={index}
               className="flex items-center p-4 sm:p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition"
             >
-              {/* Imagen ubicada a la izquierda, de tamaño fijo */}
               <img
                 src={card.image}
                 alt={card.title}

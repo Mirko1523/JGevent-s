@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"; // Importamos Link
 import logo from "../../assets/logoJG.png";
 import Presupuesto from "../Buttons/Presupuesto/button";
 
-function NavBar() {
+function NavBarR() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
@@ -22,17 +22,20 @@ function NavBar() {
     // Opciones de Servicios con rutas que redirigen a páginas distintas
     const serviceItems = [
         { title: "FIESTAS DE 15", desc: "Cumple tu sueño recibiendo un amor único", href: "/seccion15" },
-        { title: "CASAMIENTOS", desc: "Todos tus sueños cumplidos en una fiesta", href: "/seccionCasamiento" },
-        { title: "EVENTOS CORPORATIVOS", desc: "Conexiones que hacen de un encuentro un éxito", href: "/seccionCorp" },
-        { title: "ANIVERSARIOS", desc: "Festeja el amor en un encuentro inolvidable", href: "/seccionAniv" },
-        { title: "RECEPCIONES", desc: "Despedí esta etapa de la mejor manera", href: "/seccionRecep" },
-        { title: "OTROS", desc: "Adaptamos este encuentro según tus gustos", href: "/seccionOtros" },
+        { title: "CASAMIENTOS", desc: "Todos tus sueños cumplidos en una fiesta", href: "/seccion15" },
+        { title: "EVENTOS CORPORATIVOS", desc: "Conexiones que hacen de un encuentro un éxito", href: "/seccion15" },
+        { title: "ANIVERSARIOS", desc: "Festeja el amor en un encuentro inolvidable", href: "/seccion15" },
+        { title: "RECEPCIONES", desc: "Despedí esta etapa de la mejor manera", href: "/seccion15" },
+        { title: "OTROS", desc: "Adaptamos este encuentro según tus gustos", href: "/seccion15" },
     ];
 
     return (
         <header className={`sticky top-0 z-50 lg:px-10 px-4 bg-white flex flex-wrap items-center py-4 transition-all duration-300 ${isScrolled ? "shadow-lg -translate-y-1" : "shadow-md"}`}>
             <div className="flex-1 flex justify-between items-center w-full">
                 <div className="flex items-center space-x-2">
+                    <a
+                    href="/"
+                    >
                     <img
                         src={logo}
                         alt="jgEvents"
@@ -40,7 +43,8 @@ function NavBar() {
                         height={40}
                         className="cursor-pointer"
                         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                    />
+                        />
+                        </a>
                 </div>
 
                 <div className="md:hidden block">
@@ -55,8 +59,8 @@ function NavBar() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-8">
-                    <a href="#home" className="text-black font-bold hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg">Home</a>
-                    <a href="#nosotros" className="text-black font-bold hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg">Nosotros</a>
+                    <a href="/" className="text-black font-bold hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg">Home</a>
+                    
                     
                     {/* Dropdown Servicios */}
                     <div className="relative">
@@ -94,10 +98,7 @@ function NavBar() {
                 <nav>
                     <ul className="flex flex-col items-center text-base text-gray-700">
                         <li className="py-3 border-b border-gray-300 w-full text-center">
-                            <a href="#home" className="text-black font-bold hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg">Home</a>
-                        </li>
-                        <li className="py-4 border-b border-gray-300 w-full text-center">
-                            <a href="#nosotros" className="text-black font-bold hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg">Nosotros</a>
+                            <a href="/" className="text-black font-bold hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg">Home</a>
                         </li>
                         <li className="py-4 border-b border-gray-300 w-full text-center">
                             <button onClick={toggleServices} className="flex items-center justify-center text-black font-bold hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg w-full">
@@ -129,4 +130,4 @@ function NavBar() {
     );
 }
 
-export default NavBar;
+export default NavBarR;

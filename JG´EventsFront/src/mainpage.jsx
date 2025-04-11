@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import NavBar from "./complements/NavBar/navbar";
+import NavBarS from "./complements/NavBar/navbarScroll";
 import Footer from "./complements/footer/footer";
 import Nosotros from "./components/Nosotros/nosotros";
 import Home from "./components/Home/home";
@@ -37,7 +37,7 @@ function MainPage() {
     return (
         <>
             <div className="flex flex-col min-h-screen">
-                <NavBar />
+                <NavBarS />
                 {/* Sección Home */}
                 <section
                     id="home"
