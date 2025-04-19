@@ -1,4 +1,5 @@
 import { Facebook, Instagram } from "lucide-react";
+import whatsapp from "../../assets/whatsapp.png";
 
 const Footer = () => {
     return (
@@ -19,12 +20,11 @@ const Footer = () => {
             <p className="text-sm text-center text-white">
                 created by 
                 <a
-                href="https://www.instagram.com/_mkmagency/"
-                className="hover:underline ml-1"
+                    href="https://www.instagram.com/_mkmagency/"
+                    className="hover:underline ml-1"
                 >
-                <span className="font-semibold">MkmAgency</span>
+                    <span className="font-semibold">MkmAgency</span>
                 </a>
-                
             </p>
 
             <div className="flex justify-center gap-2">
@@ -55,18 +55,11 @@ const Footer = () => {
                     className="p-2 text-white rounded-lg hover:bg-gray-700"
                     aria-label="WhatsApp"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 308 308"
+                    <img
+                        src={whatsapp}
+                        alt="WhatsApp"
                         className="w-4 h-4"
-                        fill="#f8f2f2"
-                    >
-                        {/* WhatsApp SVG paths */}
-                        <g id="XMLID_468_">
-                            <path id="XMLID_469_" d="..."></path>
-                            <path id="XMLID_470_" d="..."></path>
-                        </g>
-                    </svg>
+                    />
                 </a>
             </div>
         </footer>
